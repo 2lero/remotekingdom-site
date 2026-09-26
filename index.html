@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RemoteKingdom – komputer na telewizorze</title>
+<meta name="description" content="RemoteKingdom: pulpit i gry z komputera z Windows na telewizorze z Android TV. Obraz H.264, dźwięk, pilot i pad.">
+<link rel="icon" type="image/png" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #121821; --bg2: #19212d; --line: #2a3444;
+    --text: #eef1f5; --muted: #a9b3c1;
+    --gold: #e3a92b; --blue: #6ea8ff; --btn: #2f6feb;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 Figtree, system-ui, sans-serif; }
+  a { color: var(--blue); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; line-height: 1.15; margin: 0 0 .5em; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+  h1 span { color: var(--gold); }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+  h3 { font-size: 1.15rem; }
+  p { margin: 0 0 1em; }
+  .muted { color: var(--muted); }
+
+  header.top { display: flex; align-items: center; gap: 12px; padding: 20px 0; }
+  header.top img { width: 40px; height: 40px; border-radius: 10px; }
+  header.top b { font-family: Fraunces, Georgia, serif; font-size: 1.25rem; }
+  header.top nav { margin-left: auto; display: flex; gap: 20px; }
+  header.top nav a { color: var(--muted); text-decoration: none; }
+  header.top nav a:hover { color: var(--text); }
+
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 48px 0 72px; }
+  .hero img.shot { width: 100%; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+  .lead { font-size: 1.2rem; color: var(--muted); max-width: 34em; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 22px; border-radius: 12px;
+         font-weight: 600; text-decoration: none; border: 1px solid transparent; }
+  .btn.primary { background: var(--btn); color: #fff; }
+  .btn.primary:hover { background: #255fd0; }
+  .btn.ghost { border-color: var(--line); color: var(--text); }
+  .btn.ghost:hover { border-color: var(--muted); }
+  .btn svg { width: 20px; height: 20px; }
+  .note { font-size: .9rem; color: var(--muted); margin-top: 12px; }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
+  .card { background: var(--bg2); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .card svg { width: 28px; height: 28px; color: var(--gold); margin-bottom: 10px; }
+  .card p { color: var(--muted); margin: 0; }
+
+  ol.steps { list-style: none; padding: 0; counter-reset: s; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
+  ol.steps li { counter-increment: s; background: var(--bg2); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  ol.steps li::before { content: counter(s); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%;
+                        background: var(--gold); color: #1a1a1a; font-weight: 700; margin-bottom: 12px; }
+  ol.steps p { color: var(--muted); margin: 0; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+  ul.clean { padding-left: 1.1em; margin: 0; }
+  ul.clean li { margin-bottom: .4em; }
+
+  details { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--muted); margin: 12px 0 0; }
+  code { background: #0d1219; border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: .92em; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: .95rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 24px; }
+    .grid, ol.steps, .two { grid-template-columns: 1fr; }
+    header.top nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <img src="img/icon.png" alt="">
+    <b>RemoteKingdom</b>
+    <nav>
+      <a href="#funkcje">Funkcje</a>
+      <a href="#start">Jak zacząć</a>
+      <a href="#faq">Pytania</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Twój komputer.<br><span>Na telewizorze.</span></h1>
+      <p class="lead">RemoteKingdom przenosi pulpit i gry z komputera z Windows na telewizor z Android TV lub Google TV. Obraz, dźwięk, pilot i pad – bez kabla HDMI przez cały pokój.</p>
+      <div class="buttons">
+        <a class="btn primary" href="https://github.com/2lero/remotekingdom-site/releases/latest">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Pobierz serwer dla Windows
+        </a>
+        <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.lero.remotekingdom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M8 21h8"/></svg>
+          Aplikacja na TV w Google Play
+        </a>
+      </div>
+      <p class="note">Serwer: Windows 10 lub 11 (64-bit). Aplikacja: Android TV / Google TV.</p>
+    </div>
+    <img class="shot" src="img/connect.png" alt="Ekran łączenia aplikacji RemoteKingdom na telewizorze">
+  </div>
+</div>
+
+<section id="funkcje">
+  <div class="wrap">
+    <h2>Co potrafi</h2>
+    <div class="grid">
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="m10 9 5 2-5 2z"/></svg>
+        <h3>Płynny obraz</h3>
+        <p>Obraz kodowany sprzętowo jako H.264 na komputerze i dekodowany sprzętowo przez telewizor – do 60 klatek na sekundę.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h4m-2-2v4"/><path d="M15 11h.01M18 13h.01"/><path d="M17.3 5H6.7a4 4 0 0 0-3.9 3.2l-1 5A3 3 0 0 0 4.7 17c1 0 1.9-.5 2.4-1.3L8 14h8l.9 1.7a2.8 2.8 0 0 0 5.2-2.2l-1-5A4 4 0 0 0 17.3 5z"/></svg>
+        <h3>Granie padem</h3>
+        <p>Pad podłączony do telewizora (np. od PlayStation 4) działa na komputerze jak kontroler Xbox, razem z wibracjami.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><path d="M12 19.5h.01"/><path d="M2 9a15 15 0 0 1 20 0"/></svg>
+        <h3>Dopasowanie do sieci</h3>
+        <p>Jakość obrazu sama dostosowuje się do Wi-Fi, żeby obraz nie stawał przy słabszym połączeniu.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+        <h3>Dźwięk</h3>
+        <p>Wszystko, co gra na komputerze, słychać na telewizorze.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M12 6v2m-2 3h4"/></svg>
+        <h3>Pilot, mysz, klawiatura</h3>
+        <p>Pilot od telewizora wystarczy do obsługi (długie OK włącza tryb myszy). Działa też mysz i klawiatura podłączone do TV.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <h3>Bezpiecznie</h3>
+        <p>Połączenie szyfrowane (TLS). Telewizor łączy się dopiero po sparowaniu kodem PIN pokazanym na komputerze.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <h2>Jak zacząć</h2>
+    <ol class="steps">
+      <li>
+        <h3>Zainstaluj serwer</h3>
+        <p>Pobierz instalator na komputer z Windows i uruchom go. Serwer włączy się sam i będzie startował po zalogowaniu.</p>
+      </li>
+      <li>
+        <h3>Zainstaluj aplikację na TV</h3>
+        <p>Znajdź RemoteKingdom w Google Play na telewizorze i wpisz adres IP komputera (np. <code>192.168.0.10</code>).</p>
+      </li>
+      <li>
+        <h3>Sparuj i graj</h3>
+        <p>Za pierwszym razem na komputerze pojawi się 6-cyfrowy kod – wpisz go na telewizorze. Kolejne połączenia są już automatyczne.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Wymagania i porady</h2>
+    <div class="two">
+      <div class="card">
+        <h3>Wymagania</h3>
+        <ul class="clean">
+          <li>Windows 10 (1809 lub nowszy) albo Windows 11, 64-bit</li>
+          <li>Telewizor lub przystawka z Android TV / Google TV</li>
+          <li>Komputer i telewizor w tej samej sieci domowej</li>
+          <li>Do gry padem: sterownik <a href="https://github.com/nefarius/ViGEmBus/releases/latest">ViGEmBus</a> (instalator proponuje jego pobranie)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Dla najlepszej płynności</h3>
+        <ul class="clean">
+          <li>Podłącz komputer do routera kablem – to daje największą różnicę</li>
+          <li>Jeśli Wi-Fi, to w paśmie 5 GHz, nie 2,4 GHz</li>
+          <li>Wyłącz duże pobierania (aktualizacje gier) na czas grania</li>
+          <li>Włącz „Pokaż statystyki połączenia”, żeby widzieć ping i klatki</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Pytania</h2>
+    <details>
+      <summary>Aplikacja pisze „Serwer nie odpowiada”</summary>
+      <p>Sprawdź, czy serwer działa na komputerze (uruchom „RemoteKingdom Server” z menu Start), czy adres IP jest poprawny i czy komputer i telewizor są w tej samej sieci. Serwer używa portu 3389.</p>
+    </details>
+    <details>
+      <summary>Jak sprawdzić adres IP komputera?</summary>
+      <p>Otwórz Ustawienia Windows → Sieć i Internet → właściwości połączenia i odczytaj „Adres IPv4”, albo wpisz <code>ipconfig</code> w wierszu poleceń.</p>
+    </details>
+    <details>
+      <summary>Czy mogę połączyć się zwykłym Pulpitem zdalnym Windows (mstsc)?</summary>
+      <p>Tak. Podaj login i hasło konta Windows tego komputera i zaznacz zapamiętanie poświadczeń. Bez poprawnego loginu serwer odmówi połączenia.</p>
+    </details>
+    <details>
+      <summary>Aplikacja pyta, czy zaufać nowemu certyfikatowi</summary>
+      <p>Tak się dzieje po ponownej instalacji serwera lub Windowsa. Jeśli to Twój komputer i nic nie zmieniałeś, a pytanie się pojawiło – wybierz „Nie” i sprawdź, czy łączysz się z właściwym adresem.</p>
+    </details>
+    <details>
+      <summary>Jak rozłączyć się albo użyć myszy pilotem?</summary>
+      <p>Przytrzymaj Wstecz, aby się rozłączyć. Przytrzymaj OK, aby włączyć tryb myszy: strzałki przesuwają kursor, OK klika.</p>
+    </details>
+    <details>
+      <summary>Windows ostrzega, że wydawca jest nieznany</summary>
+      <p>Instalator nie jest jeszcze podpisany certyfikatem. Kliknij „Więcej informacji” → „Uruchom mimo to”. Pobieraj instalator tylko z tej strony.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>RemoteKingdom</span>
+    <span><a href="https://github.com/2lero/privacy-policy/blob/main/remotekingdom-privacy.txt">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
