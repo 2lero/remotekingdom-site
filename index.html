@@ -6,6 +6,9 @@
 <title>RemoteKingdom – komputer na telewizorze</title>
 <meta name="description" content="RemoteKingdom: pulpit i gry z komputera z Windows na telewizorze z Android TV. Obraz H.264, dźwięk, pilot i pad.">
 <link rel="icon" type="image/png" href="img/icon.png">
+<link rel="alternate" hreflang="pl" href="https://2lero.github.io/remotekingdom-site/">
+<link rel="alternate" hreflang="en" href="https://2lero.github.io/remotekingdom-site/en/">
+<link rel="alternate" hreflang="x-default" href="https://2lero.github.io/remotekingdom-site/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
@@ -83,7 +86,7 @@
       <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></svg>
         <h3>Też Pulpit zdalny Windows</h3>
-        <p>Aplikacja łączy się również z wbudowanym Pulpitem zdalnym Windows (Windows Pro), także z logowaniem NLA. Do pracy na pulpicie wystarczy; do gier i filmów lepszy jest serwer RemoteKingdom.</p>
+        <p>Aplikacja łączy się również z wbudowanym Pulpitem zdalnym Windows (Windows Pro), także z logowaniem NLA. Uwaga: połączenie z domowym Windowsem wylogowuje osobę siedzącą przy komputerze – Windows kliencki ma tylko jedną sesję. Do pracy na pulpicie wystarczy; do gier i filmów lepszy jest serwer RemoteKingdom.</p>
       </div>
       <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="17" y="8" width="5" height="10" rx="1"/><path d="M6 18h6"/></svg>
@@ -220,7 +223,8 @@
     <h2>Pytania</h2>
     <details>
       <summary>Aplikacja pisze „Serwer nie odpowiada”</summary>
-      <p>Sprawdź, czy serwer działa na komputerze (ikona RemoteKingdom w zasobniku obok zegara; jeśli jej nie ma, uruchom „RemoteKingdom Server” z menu Start), czy adres IP jest poprawny i czy komputer i telewizor są w tej samej sieci. Serwer używa portu 3389.</p>
+      <p>Sprawdź, czy serwer działa na komputerze (ikona RemoteKingdom w zasobniku obok zegara; jeśli jej nie ma, uruchom „RemoteKingdom Server” z menu Start), czy adres IP jest poprawny i czy komputer i telewizor są w tej samej sieci. Serwer używa domyślnie portu 3389.</p>
+      <p>Na tym samym porcie działa też wbudowany Pulpit zdalny Windows. Jeśli masz go włączonego, serwer RemoteKingdom nie wystartuje – zakończy się po cichu, a aplikacja pokaże tylko, że nie może się połączyć. Żeby to naprawić, wyłącz Pulpit zdalny (Ustawienia → System → Pulpit zdalny) albo uruchom serwer RemoteKingdom na innym porcie – numer portu podaje się jako pierwszy argument (np. 3390). Jeśli serwer nie startuje, zajrzyj do pliku <code>%LOCALAPPDATA%\RemoteKingdom\rk_server.err</code>: znajdziesz tam wpis <code>[Main] Fatal: bind() failed: 10048</code>.</p>
     </details>
     <details>
       <summary>Jak sprawdzić adres IP komputera?</summary>
@@ -233,6 +237,10 @@
     <details>
       <summary>Czy aplikacja połączy się z komputerem bez serwera RemoteKingdom?</summary>
       <p>Tak, jeśli komputer ma Windows Pro z włączonym Pulpitem zdalnym (Ustawienia → System → Pulpit zdalny). Aplikacja poprosi o nazwę użytkownika i hasło konta Windows; hasło nie jest zapisywane. Pad, parowanie PIN-em i obraz H.264 działają tylko z serwerem RemoteKingdom.</p>
+    </details>
+    <details>
+      <summary>Czy połączenie wylogowuje osobę siedzącą przy komputerze?</summary>
+      <p>Tak, jeśli łączysz się z komputerem przez wbudowany Pulpit zdalny Windows (Windows Pro). Windows kliencki ma tylko jedną sesję, więc osoba siedząca przy komputerze zostanie wylogowana. Serwerowe wersje Windows pozwalają na kilka sesji jednocześnie, ale domowy Windows 10/11 Pro – nie.</p>
     </details>
     <details>
       <summary>Aplikacja pyta, czy zaufać nowemu certyfikatowi</summary>

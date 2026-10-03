@@ -7,6 +7,8 @@
 <meta name="description" content="RemoteKingdom: your Windows PC desktop and games on an Android TV. H.264 video, sound, remote and gamepad.">
 <link rel="icon" type="image/png" href="../img/icon.png">
 <link rel="alternate" hreflang="pl" href="https://2lero.github.io/remotekingdom-site/">
+<link rel="alternate" hreflang="en" href="https://2lero.github.io/remotekingdom-site/en/">
+<link rel="alternate" hreflang="x-default" href="https://2lero.github.io/remotekingdom-site/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
@@ -84,7 +86,7 @@
       <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></svg>
         <h3>Windows Remote Desktop too</h3>
-        <p>The app also connects to the built-in Windows Remote Desktop (Windows Pro), NLA sign-in included. Fine for desktop work; for games and video the RemoteKingdom server is better.</p>
+        <p>The app also connects to the built-in Windows Remote Desktop (Windows Pro), NLA sign-in included. Note: connecting to a home Windows PC signs out whoever is sitting at the computer – client Windows has only one session. Fine for desktop work; for games and video the RemoteKingdom server is better.</p>
       </div>
       <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="17" y="8" width="5" height="10" rx="1"/><path d="M6 18h6"/></svg>
@@ -221,7 +223,8 @@
     <h2>FAQ</h2>
     <details>
       <summary>The app says the server is not responding</summary>
-      <p>Check that the server is running on the PC (the RemoteKingdom icon next to the clock; if it is missing, start “RemoteKingdom Server” from the Start menu), that the IP address is correct and that the PC and TV are on the same network. The server uses port 3389.</p>
+      <p>Check that the server is running on the PC (the RemoteKingdom icon next to the clock; if it is missing, start “RemoteKingdom Server” from the Start menu), that the IP address is correct and that the PC and TV are on the same network. The server uses port 3389 by default.</p>
+      <p>The built-in Windows Remote Desktop uses that same port. If you have it turned on, the RemoteKingdom server will not start – it exits silently and the app only says it cannot connect. To fix this, turn Remote Desktop off (Settings → System → Remote Desktop) or start the RemoteKingdom server on a different port – the port number is given as the first argument (e.g. 3390). If the server will not start, look at the file <code>%LOCALAPPDATA%\RemoteKingdom\rk_server.err</code>: you will find the line <code>[Main] Fatal: bind() failed: 10048</code>.</p>
     </details>
     <details>
       <summary>How do I find my PC's IP address?</summary>
@@ -234,6 +237,10 @@
     <details>
       <summary>Can the app connect to a PC without the RemoteKingdom server?</summary>
       <p>Yes, if the PC runs Windows Pro with Remote Desktop turned on (Settings → System → Remote Desktop). The app asks for the Windows user name and password; the password is not stored. Gamepads, PIN pairing and H.264 video work only with the RemoteKingdom server.</p>
+    </details>
+    <details>
+      <summary>Does connecting sign out whoever is at the PC?</summary>
+      <p>Yes, if you connect through the built-in Windows Remote Desktop (Windows Pro). Client Windows has only one session, so whoever is sitting at the computer gets signed out. Server editions of Windows allow several sessions at once, but home Windows 10/11 Pro does not.</p>
     </details>
     <details>
       <summary>The app asks whether to trust a new certificate</summary>
