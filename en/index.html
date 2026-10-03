@@ -40,7 +40,7 @@
           TV app on Google Play
         </a>
       </div>
-      <p class="note">Server: Windows 10 or 11 (64-bit). App: Android TV / Google TV.</p>
+      <p class="note">Server: Windows 10 or 11 (64-bit). App: Android TV / Google TV, phones and tablets. Also connects to Windows Pro Remote Desktop.</p>
     </div>
     <img class="shot" src="../img/connect.jpg" alt="RemoteKingdom connection screen on a TV">
   </div>
@@ -80,6 +80,21 @@
         <h3>Secure</h3>
         <p>Encrypted connection (TLS). The TV connects only after pairing with a PIN shown on the PC.</p>
       </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></svg>
+        <h3>Windows Remote Desktop too</h3>
+        <p>The app also connects to the built-in Windows Remote Desktop (Windows Pro), NLA sign-in included. Fine for desktop work; for games and video the RemoteKingdom server is better.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="17" y="8" width="5" height="10" rx="1"/><path d="M6 18h6"/></svg>
+        <h3>TV, phone, tablet</h3>
+        <p>Runs on Android TV and Google TV, and on phones and tablets with Android 7 or later – in portrait and landscape.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h8M8 3v2m2 0c-1 4-3 7-6 9m2-5c1 2 3 4 5 5"/><path d="m13 20 4-9 4 9m-7-2h6"/></svg>
+        <h3>English and Polish</h3>
+        <p>The app follows the language of your phone or TV: English or Polish.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -98,7 +113,7 @@
 <section id="app">
   <div class="wrap">
     <h2>The TV app</h2>
-    <p class="muted">RemoteKingdom for Android TV and Google TV – fully usable with the remote. The app is in Polish for now.</p>
+    <p class="muted">RemoteKingdom for Android TV and Google TV – fully usable with the remote, in English or Polish.</p>
     <div class="two">
       <div class="card">
         <h3>On the connection screen</h3>
@@ -151,7 +166,7 @@
         <h3>Requirements</h3>
         <ul class="clean">
           <li>Windows 10 (1809 or later) or Windows 11, 64-bit</li>
-          <li>A TV or box with Android TV / Google TV</li>
+          <li>A TV or box with Android TV / Google TV, or a phone or tablet with Android 7+</li>
           <li>PC and TV on the same home network</li>
           <li>For gamepad play: the <a href="https://github.com/nefarius/ViGEmBus/releases/latest">ViGEmBus</a> driver (the installer offers to open its page)</li>
         </ul>
@@ -182,7 +197,11 @@
     </details>
     <details>
       <summary>Can I connect with the regular Windows Remote Desktop (mstsc)?</summary>
-      <p>Yes. Enter the user name and password of a Windows account on this PC and let Remote Desktop remember the credentials. Without a valid login the server refuses the connection.</p>
+      <p>Yes. If Remote Desktop has no saved password, a RemoteKingdom sign-in screen appears after connecting – enter the user name and password of a Windows account on this PC (for a Microsoft account: its email address and password, not the PIN). After 3 wrong attempts the server disconnects.</p>
+    </details>
+    <details>
+      <summary>Can the app connect to a PC without the RemoteKingdom server?</summary>
+      <p>Yes, if the PC runs Windows Pro with Remote Desktop turned on (Settings → System → Remote Desktop). The app asks for the Windows user name and password; the password is not stored. Gamepads, PIN pairing and H.264 video work only with the RemoteKingdom server.</p>
     </details>
     <details>
       <summary>The app asks whether to trust a new certificate</summary>

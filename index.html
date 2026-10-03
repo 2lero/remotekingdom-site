@@ -39,7 +39,7 @@
           Aplikacja na TV w Google Play
         </a>
       </div>
-      <p class="note">Serwer: Windows 10 lub 11 (64-bit). Aplikacja: Android TV / Google TV.</p>
+      <p class="note">Serwer: Windows 10 lub 11 (64-bit). Aplikacja: Android TV / Google TV, telefony i tablety. Łączy się też z Pulpitem zdalnym Windows Pro.</p>
     </div>
     <img class="shot" src="img/connect.jpg" alt="Ekran łączenia aplikacji RemoteKingdom na telewizorze">
   </div>
@@ -78,6 +78,21 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
         <h3>Bezpiecznie</h3>
         <p>Połączenie szyfrowane (TLS). Telewizor łączy się dopiero po sparowaniu kodem PIN pokazanym na komputerze.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></svg>
+        <h3>Też Pulpit zdalny Windows</h3>
+        <p>Aplikacja łączy się również z wbudowanym Pulpitem zdalnym Windows (Windows Pro), także z logowaniem NLA. Do pracy na pulpicie wystarczy; do gier i filmów lepszy jest serwer RemoteKingdom.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="17" y="8" width="5" height="10" rx="1"/><path d="M6 18h6"/></svg>
+        <h3>Telewizor, telefon, tablet</h3>
+        <p>Działa na Android TV i Google TV, a także na telefonach i tabletach z Androidem 7 lub nowszym – w pionie i w poziomie.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h8M8 3v2m2 0c-1 4-3 7-6 9m2-5c1 2 3 4 5 5"/><path d="m13 20 4-9 4 9m-7-2h6"/></svg>
+        <h3>Po polsku i po angielsku</h3>
+        <p>Aplikacja mówi w języku telefonu lub telewizora: po polsku albo po angielsku.</p>
       </div>
     </div>
   </div>
@@ -150,7 +165,7 @@
         <h3>Wymagania</h3>
         <ul class="clean">
           <li>Windows 10 (1809 lub nowszy) albo Windows 11, 64-bit</li>
-          <li>Telewizor lub przystawka z Android TV / Google TV</li>
+          <li>Telewizor lub przystawka z Android TV / Google TV albo telefon lub tablet z Androidem 7+</li>
           <li>Komputer i telewizor w tej samej sieci domowej</li>
           <li>Do gry padem: sterownik <a href="https://github.com/nefarius/ViGEmBus/releases/latest">ViGEmBus</a> (instalator proponuje jego pobranie)</li>
         </ul>
@@ -181,7 +196,11 @@
     </details>
     <details>
       <summary>Czy mogę połączyć się zwykłym Pulpitem zdalnym Windows (mstsc)?</summary>
-      <p>Tak. Podaj login i hasło konta Windows tego komputera i zaznacz zapamiętanie poświadczeń. Bez poprawnego loginu serwer odmówi połączenia.</p>
+      <p>Tak. Jeśli Pulpit zdalny nie ma zapisanego hasła, po połączeniu pojawi się ekran logowania RemoteKingdom – wpisz nazwę użytkownika i hasło konta Windows tego komputera (dla konta Microsoft: adres e-mail i hasło konta, nie PIN). Po 3 błędnych próbach serwer się rozłącza.</p>
+    </details>
+    <details>
+      <summary>Czy aplikacja połączy się z komputerem bez serwera RemoteKingdom?</summary>
+      <p>Tak, jeśli komputer ma Windows Pro z włączonym Pulpitem zdalnym (Ustawienia → System → Pulpit zdalny). Aplikacja poprosi o nazwę użytkownika i hasło konta Windows; hasło nie jest zapisywane. Pad, parowanie PIN-em i obraz H.264 działają tylko z serwerem RemoteKingdom.</p>
     </details>
     <details>
       <summary>Aplikacja pyta, czy zaufać nowemu certyfikatowi</summary>
