@@ -203,6 +203,7 @@
           <li>A TV or box with Android TV / Google TV, or a phone or tablet with Android 7+</li>
           <li>PC and TV on the same home network</li>
           <li>For gamepad play: the <a href="https://github.com/nefarius/ViGEmBus/releases/latest">ViGEmBus</a> driver (the installer offers to open its page)</li>
+          <li>The system must have Media Foundation: on Windows 10/11 “N” editions install the “Media Feature Pack”, and on Windows Server enable the Media Foundation feature</li>
         </ul>
       </div>
       <div class="card">
@@ -223,7 +224,7 @@
     <h2>FAQ</h2>
     <details>
       <summary>The app says the server is not responding</summary>
-      <p>Check that the server is running on the PC (the RemoteKingdom icon next to the clock; if it is missing, start “RemoteKingdom Server” from the Start menu), that the IP address is correct and that the PC and TV are on the same network. The server uses port 3389 by default.</p>
+      <p>Check that the server is running on the PC (the RemoteKingdom icon next to the clock; if it is missing, start “RemoteKingdom Server” from the Start menu), that the IP address is correct and that the PC and TV are on the same network. The server uses port 3389 by default. If a window about the missing <code>MFPlat.dll</code> file appears when the server starts, the PC is missing Media Foundation – see “Requirements and tips”.</p>
       <p>The built-in Windows Remote Desktop uses that same port. If you have it turned on, the RemoteKingdom server will not start – it exits silently and the app only says it cannot connect. To fix this, turn Remote Desktop off (Settings → System → Remote Desktop) or start the RemoteKingdom server on a different port – the port number is given as the first argument (e.g. 3390). If the server will not start, look at the file <code>%LOCALAPPDATA%\RemoteKingdom\rk_server.err</code>: you will find the line <code>[Main] Fatal: bind() failed: 10048</code>.</p>
     </details>
     <details>
