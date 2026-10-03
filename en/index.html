@@ -20,6 +20,7 @@
     <b>RemoteKingdom</b>
     <nav>
       <a href="#features">Features</a>
+      <a href="#rdp">RDP</a>
       <a href="#start">Get started</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -40,7 +41,7 @@
           TV app on Google Play
         </a>
       </div>
-      <p class="note">Server: Windows 10 or 11 (64-bit). App: Android TV / Google TV, phones and tablets. Also connects to Windows Pro Remote Desktop.</p>
+      <p class="note">Server: Windows 10 or 11 (64-bit). App: Android TV / Google TV, phones and tablets. Built on the standard RDP protocol – <a href="#rdp">what works with other clients and servers</a>.</p>
     </div>
     <img class="shot" src="../img/connect.jpg" alt="RemoteKingdom connection screen on a TV">
   </div>
@@ -96,6 +97,36 @@
         <p>The app follows the language of your phone or TV: English or Polish.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="rdp">
+  <div class="wrap">
+    <h2>Standard RDP protocol</h2>
+    <p class="muted">RemoteKingdom speaks the regular Remote Desktop Protocol (RDP), so it works both ways: you can connect to the server with other RDP clients, and the TV app can connect to a PC without our server. The full feature set, though, comes only with the pair: RemoteKingdom app + RemoteKingdom server.</p>
+    <div class="table-wrap">
+      <table class="compat">
+        <thead>
+          <tr>
+            <th></th>
+            <th>RemoteKingdom app<br>+ RemoteKingdom server</th>
+            <th>Another RDP client (e.g. mstsc)<br>+ RemoteKingdom server</th>
+            <th>RemoteKingdom app<br>+ Windows Remote Desktop</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Picture</th><td><span class="yes">H.264</span>, up to 60 fps</td><td>H.264 if the client supports it (mstsc does), plain bitmaps otherwise</td><td>Plain bitmaps – for work, not for games and video</td></tr>
+          <tr><th>Adapts to the network</th><td><span class="yes">Yes</span></td><td>Only with H.264 picture</td><td><span class="no">No</span></td></tr>
+          <tr><th>Sound</th><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>Not tested yet</td></tr>
+          <tr><th>Mouse and keyboard</th><td><span class="yes">Yes</span>, TV remote too</td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span>, TV remote too</td></tr>
+          <tr><th>Gamepad as an Xbox controller</th><td><span class="yes">Yes</span>, with rumble</td><td><span class="no">No</span></td><td><span class="no">No</span></td></tr>
+          <tr><th>Sign-in</th><td>PIN pairing, automatic afterwards</td><td>Windows account (server's sign-in screen)</td><td>Windows account, NLA included</td></tr>
+          <tr><th>Steam Big Picture, gamepad screenshots, ping in statistics</th><td><span class="yes">Yes</span></td><td><span class="no">No</span></td><td><span class="no">No</span></td></tr>
+          <tr><th>Windows edition</th><td>10 or 11, Home included</td><td>10 or 11, Home included</td><td>Pro, Enterprise or Education with Remote Desktop turned on</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Tested with mstsc (Windows Remote Desktop Connection). Other RDP clients (e.g. Windows App on macOS, iOS and Android, FreeRDP, Remmina) and other RDP servers (e.g. xrdp on Linux) should behave similarly but have not been tested yet.</p>
   </div>
 </section>
 
