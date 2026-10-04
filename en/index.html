@@ -254,6 +254,11 @@
       <p>Yes. If Remote Desktop has no saved password, a RemoteKingdom sign-in screen appears after connecting – enter the user name and password of a Windows account on this PC (for a Microsoft account: its email address and password, not the PIN). After 3 wrong attempts the server disconnects.</p>
     </details>
     <details>
+      <summary>Why can't I sign in with a PIN or Windows Hello?</summary>
+      <p>PIN and Windows Hello do not work in a remote session – the sign-in screen shows only password and smart card. Enter the Windows account password (for a Microsoft account: the account password, not the PIN).</p>
+      <p>With a Microsoft account that has the “require Windows Hello” option turned on, signing in to Remote Desktop with just the password may also fail. Turning that option off, or signing in with the password once locally on that PC, helps.</p>
+    </details>
+    <details>
       <summary>Can the app connect to a PC without the RemoteKingdom server?</summary>
       <p>Yes, if the PC runs Windows Pro with Remote Desktop turned on (Settings → System → Remote Desktop). The app asks for the Windows user name and password; the password is not stored. Gamepads, PIN pairing and H.264 video work only with the RemoteKingdom server.</p>
     </details>
