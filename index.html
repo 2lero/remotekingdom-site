@@ -84,6 +84,11 @@
         <p>Połączenie szyfrowane (TLS). Telewizor łączy się dopiero po sparowaniu kodem PIN pokazanym na komputerze.</p>
       </div>
       <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <h3>Także przed zalogowaniem</h3>
+        <p>Serwer działa jako usługa Windows od startu komputera. Zdalnie zalogujesz się na ekranie logowania (także na inne konto), wpiszesz PIN na ekranie blokady i potwierdzisz okna UAC.</p>
+      </div>
+      <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></svg>
         <h3>Też Pulpit zdalny Windows</h3>
         <p>Aplikacja łączy się również z wbudowanym Pulpitem zdalnym Windows (Windows Pro), także z logowaniem NLA. Uwaga: połączenie z domowym Windowsem wylogowuje osobę siedzącą przy komputerze – Windows kliencki ma tylko jedną sesję. Do pracy na pulpicie wystarczy; do gier i filmów lepszy jest serwer RemoteKingdom.</p>
@@ -117,12 +122,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr><th>Obraz</th><td><span class="yes">H.264</span>, do 60 kl./s</td><td>H.264, jeśli klient go obsługuje (mstsc tak), inaczej zwykłe bitmapy</td><td>Zwykłe bitmapy – do pracy, nie do gier i filmów</td></tr>
+          <tr><th>Obraz</th><td><span class="yes">H.264</span>, do 60 kl./s</td><td>Pulpit bez strat (ostry tekst), a H.264 tylko tam, gdzie leci film lub gra – jeśli klient obsługuje grafikę RDP 8 (mstsc tak), inaczej zwykłe bitmapy</td><td>Zwykłe bitmapy – do pracy, nie do gier i filmów</td></tr>
           <tr><th>Dopasowanie do sieci</th><td><span class="yes">Tak</span></td><td>Tylko przy obrazie H.264</td><td><span class="no">Nie</span></td></tr>
           <tr><th>Dźwięk</th><td><span class="yes">Tak</span></td><td><span class="yes">Tak</span></td><td>Jeszcze niesprawdzony</td></tr>
           <tr><th>Mysz i klawiatura</th><td><span class="yes">Tak</span>, także pilot</td><td><span class="yes">Tak</span></td><td><span class="yes">Tak</span>, także pilot</td></tr>
           <tr><th>Pad jak DualShock lub kontroler Xbox</th><td><span class="yes">Tak</span>, z wibracjami i podpowiedziami ✕ ○ □ △</td><td><span class="no">Nie</span></td><td><span class="no">Nie</span></td></tr>
           <tr><th>Logowanie</th><td>Parowanie kodem PIN, potem automatycznie</td><td>Konto Windows (ekran logowania serwera)</td><td>Konto Windows, także NLA</td></tr>
+          <tr><th>Ekran logowania i blokady Windows (PIN), okna UAC</th><td><span class="yes">Tak</span>, gdy serwer działa jako usługa (domyślnie)</td><td><span class="yes">Tak</span>, gdy serwer działa jako usługa (domyślnie)</td><td>Okna UAC tak; PIN i Windows Hello nie</td></tr>
           <tr><th>Steam Big Picture, zrzuty z pada, ping w statystykach</th><td><span class="yes">Tak</span></td><td><span class="no">Nie</span></td><td><span class="no">Nie</span></td></tr>
           <tr><th>Wymagany Windows</th><td>10 lub 11, także Home</td><td>10 lub 11, także Home</td><td>Pro, Enterprise lub Education z włączonym Pulpitem zdalnym</td></tr>
         </tbody>
@@ -154,7 +160,7 @@
           <li><b>Szukaj serwerów</b> – znajduje komputery z RDP w sieci domowej i rozpoznaje RemoteKingdom, Pulpit zdalny Windows i inne</li>
           <li>Adres komputera i port zapamiętywane na następny raz</li>
           <li><b>Uruchom Steam (Big Picture)</b> – od razu po połączeniu</li>
-          <li><b>Pokaż statystyki połączenia</b> – ping, klatki na sekundę i Mb/s w rogu ekranu, a także sposób przesyłania obrazu (H.264 z aktualnym bitrate i limitem klatek albo bitmapy)</li>
+          <li><b>Pokaż statystyki połączenia</b> – ping, klatki na sekundę, Mb/s i stan baterii pada w rogu ekranu, a także sposób przesyłania obrazu (H.264 z aktualnym bitrate i limitem klatek albo bitmapy)</li>
           <li>Parowanie z komputerem kodem PIN przy pierwszym połączeniu</li>
         </ul>
       </div>
@@ -178,7 +184,7 @@
     <ol class="steps">
       <li>
         <h3>Zainstaluj serwer</h3>
-        <p>Pobierz instalator na komputer z Windows i uruchom go. Serwer włączy się sam i będzie startował po zalogowaniu. Gdy działa, jego ikona jest w zasobniku obok zegara – jej menu pokazuje adres komputera, połączone urządzenia i pozwala zakończyć serwer.</p>
+        <p>Pobierz instalator na komputer z Windows i uruchom go. Domyślnie serwer instaluje się jako usługa Windows: startuje razem z komputerem, jeszcze przed zalogowaniem. Jeśli Windows oznaczył Twoją sieć domową jako publiczną, instalator o tym ostrzeże – przełącz ją na prywatną, inaczej zapora nie wpuści telewizora. Gdy serwer działa, jego ikona jest w zasobniku obok zegara – jej menu pokazuje adres komputera, połączone urządzenia i pozwala zakończyć serwer.</p>
       </li>
       <li>
         <h3>Zainstaluj aplikację na TV</h3>
@@ -242,7 +248,8 @@
     <details>
       <summary>Aplikacja pisze „Serwer nie odpowiada”</summary>
       <p>Sprawdź, czy serwer działa na komputerze (ikona RemoteKingdom w zasobniku obok zegara; jeśli jej nie ma, uruchom „RemoteKingdom Server” z menu Start), czy adres IP jest poprawny i czy komputer i telewizor są w tej samej sieci. Serwer używa domyślnie portu 3389. Jeśli przy uruchamianiu serwera pojawia się okno o brakującym pliku <code>MFPlat.dll</code>, na komputerze brakuje biblioteki Media Foundation – patrz „Wymagania i porady”.</p>
-      <p>Na tym samym porcie działa też wbudowany Pulpit zdalny Windows. Jeśli masz go włączonego, serwer RemoteKingdom nie wystartuje – zakończy się po cichu, a aplikacja pokaże tylko, że nie może się połączyć. Żeby to naprawić, wyłącz Pulpit zdalny (Ustawienia → System → Pulpit zdalny) albo uruchom serwer RemoteKingdom na innym porcie – numer portu podaje się jako pierwszy argument (np. 3390). Jeśli serwer nie startuje, zajrzyj do pliku <code>%LOCALAPPDATA%\RemoteKingdom\rk_server.err</code>: znajdziesz tam wpis <code>[Main] Fatal: bind() failed: 10048</code>.</p>
+      <p>Na tym samym porcie działa też wbudowany Pulpit zdalny Windows. Jeśli masz go włączonego, serwer RemoteKingdom nie wystartuje – zakończy się po cichu, a aplikacja pokaże tylko, że nie może się połączyć. Żeby to naprawić, wyłącz Pulpit zdalny (Ustawienia → System → Pulpit zdalny) albo uruchom serwer RemoteKingdom na innym porcie – numer portu podaje się jako pierwszy argument (np. 3390). Jeśli serwer nie startuje, zajrzyj do pliku <code>%ProgramData%\RemoteKingdom\server\rk_server.err</code> (serwer jako usługa) albo <code>%LOCALAPPDATA%\RemoteKingdom\rk_server.err</code> (zwykły program): znajdziesz tam wpis <code>[Main] Fatal: bind() failed: 10048</code>.</p>
+      <p>Jeśli serwer działa, a telewizor i tak nie może się połączyć, sprawdź, czy Windows nie oznaczył Twojej sieci domowej jako publicznej. W sieci publicznej zapora nie wpuszcza połączeń do serwera (to ochrona np. w kawiarni lub hotelu). Zmienisz to w Ustawieniach → Sieć i Internet → Wi-Fi lub Ethernet → właściwości sieci → Typ profilu sieciowego → Sieć prywatna.</p>
     </details>
     <details>
       <summary>Jak sprawdzić adres IP komputera?</summary>
@@ -253,8 +260,9 @@
       <p>Tak. Jeśli Pulpit zdalny nie ma zapisanego hasła, po połączeniu pojawi się ekran logowania RemoteKingdom – wpisz nazwę użytkownika i hasło konta Windows tego komputera (dla konta Microsoft: adres e-mail i hasło konta, nie PIN). Po 3 błędnych próbach serwer się rozłącza.</p>
     </details>
     <details>
-      <summary>Dlaczego nie mogę zalogować się PIN-em albo Windows Hello?</summary>
-      <p>PIN i Windows Hello nie działają w sesji zdalnej – ekran logowania pokazuje tylko hasło i kartę inteligentną. Wpisz hasło konta Windows (dla konta Microsoft: hasło konta, nie PIN).</p>
+      <summary>Czy mogę zalogować się PIN-em albo Windows Hello?</summary>
+      <p>Z serwerem RemoteKingdom działającym jako usługa (domyślnie) widzisz prawdziwy ekran blokady Windows i wpisujesz PIN tak samo jak przy komputerze. Ekran logowania samego serwera (pojawia się w mstsc bez zapisanego hasła) przyjmuje tylko hasło konta Windows (dla konta Microsoft: hasło konta, nie PIN).</p>
+      <p>We wbudowanym Pulpicie zdalnym Windows PIN i Windows Hello nie działają – ekran logowania pokazuje tylko hasło i kartę inteligentną.</p>
       <p>Przy koncie Microsoft z włączoną opcją „wymagaj Windows Hello” logowanie przez Pulpit zdalny samym hasłem również potrafi nie zadziałać. Pomaga wtedy wyłączenie tej opcji albo jednorazowe zalogowanie się hasłem lokalnie na tym komputerze.</p>
     </details>
     <details>
@@ -267,11 +275,16 @@
     </details>
     <details>
       <summary>Aplikacja pyta, czy zaufać nowemu certyfikatowi</summary>
-      <p>Tak się dzieje po ponownej instalacji serwera lub Windowsa. Jeśli to Twój komputer i nic nie zmieniałeś, a pytanie się pojawiło – wybierz „Nie” i sprawdź, czy łączysz się z właściwym adresem.</p>
+      <p>Tak się dzieje po ponownej instalacji serwera lub Windowsa, a także jednorazowo po przełączeniu serwera na usługę Windows (usługa ma własny certyfikat). Jeśli to Twój komputer i nic nie zmieniałeś, a pytanie się pojawiło – wybierz „Nie” i sprawdź, czy łączysz się z właściwym adresem.</p>
     </details>
     <details>
       <summary>Jak rozłączyć się albo użyć myszy pilotem?</summary>
       <p>Przytrzymaj Wstecz, aby się rozłączyć. Przytrzymaj OK, aby włączyć tryb myszy: strzałki przesuwają kursor, OK klika.</p>
+    </details>
+    <details>
+      <summary>Usługa Windows czy zwykły program?</summary>
+      <p>Instalator domyślnie wybiera usługę Windows. Serwer działa wtedy od startu komputera, także gdy nikt nie jest zalogowany, więc zdalnie zalogujesz się na ekranie logowania, wpiszesz PIN na ekranie blokady i potwierdzisz okna UAC. Wylogowanie albo przełączenie użytkownika na chwilę rozłącza – aplikacja połączy się ponownie.</p>
+      <p>Możesz też wybrać zwykły program uruchamiany po zalogowaniu. Wtedy ekran logowania, ekran blokady i okna UAC nie są widoczne zdalnie: obraz staje, a klawiatura nie działa, dopóki ktoś przy komputerze ich nie zamknie. Sposób uruchamiania zmienisz, uruchamiając instalator ponownie i wybierając drugą opcję (od wersji 0.11.1 poprzednia jest wtedy usuwana).</p>
     </details>
     <details>
       <summary>Windows ostrzega, że wydawca jest nieznany</summary>

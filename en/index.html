@@ -84,6 +84,11 @@
         <p>Encrypted connection (TLS). The TV connects only after pairing with a PIN shown on the PC.</p>
       </div>
       <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <h3>Even before sign-in</h3>
+        <p>The server runs as a Windows service from the moment the PC starts. You can sign in remotely on the sign-in screen (even to a different account), enter your PIN on the lock screen and confirm UAC prompts.</p>
+      </div>
+      <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></svg>
         <h3>Windows Remote Desktop too</h3>
         <p>The app also connects to the built-in Windows Remote Desktop (Windows Pro), NLA sign-in included. Note: connecting to a home Windows PC signs out whoever is sitting at the computer – client Windows has only one session. Fine for desktop work; for games and video the RemoteKingdom server is better.</p>
@@ -117,12 +122,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr><th>Picture</th><td><span class="yes">H.264</span>, up to 60 fps</td><td>H.264 if the client supports it (mstsc does), plain bitmaps otherwise</td><td>Plain bitmaps – for work, not for games and video</td></tr>
+          <tr><th>Picture</th><td><span class="yes">H.264</span>, up to 60 fps</td><td>Lossless desktop (sharp text), with H.264 only where video or a game is playing – if the client supports RDP 8 graphics (mstsc does), plain bitmaps otherwise</td><td>Plain bitmaps – for work, not for games and video</td></tr>
           <tr><th>Adapts to the network</th><td><span class="yes">Yes</span></td><td>Only with H.264 picture</td><td><span class="no">No</span></td></tr>
           <tr><th>Sound</th><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>Not tested yet</td></tr>
           <tr><th>Mouse and keyboard</th><td><span class="yes">Yes</span>, TV remote too</td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span>, TV remote too</td></tr>
           <tr><th>Gamepad as a DualShock or Xbox controller</th><td><span class="yes">Yes</span>, with rumble and ✕ ○ □ △ button prompts</td><td><span class="no">No</span></td><td><span class="no">No</span></td></tr>
           <tr><th>Sign-in</th><td>PIN pairing, automatic afterwards</td><td>Windows account (server's sign-in screen)</td><td>Windows account, NLA included</td></tr>
+          <tr><th>Windows sign-in and lock screen (PIN), UAC prompts</th><td><span class="yes">Yes</span>, when the server runs as a service (default)</td><td><span class="yes">Yes</span>, when the server runs as a service (default)</td><td>UAC prompts yes; PIN and Windows Hello no</td></tr>
           <tr><th>Steam Big Picture, gamepad screenshots, ping in statistics</th><td><span class="yes">Yes</span></td><td><span class="no">No</span></td><td><span class="no">No</span></td></tr>
           <tr><th>Windows edition</th><td>10 or 11, Home included</td><td>10 or 11, Home included</td><td>Pro, Enterprise or Education with Remote Desktop turned on</td></tr>
         </tbody>
@@ -154,7 +160,7 @@
           <li><b>Find servers</b> – finds PCs with RDP on your home network and tells RemoteKingdom, Windows Remote Desktop and others apart</li>
           <li>PC address and port remembered for next time</li>
           <li><b>Start Steam (Big Picture)</b> right after connecting</li>
-          <li><b>Show connection statistics</b> – ping, frames per second and Mb/s in a corner, plus how the picture is sent (H.264 with the current bitrate and frame rate cap, or bitmaps)</li>
+          <li><b>Show connection statistics</b> – ping, frames per second, Mb/s and gamepad battery level in a corner, plus how the picture is sent (H.264 with the current bitrate and frame rate cap, or bitmaps)</li>
           <li>Pairing with the PC by PIN on the first connection</li>
         </ul>
       </div>
@@ -178,7 +184,7 @@
     <ol class="steps">
       <li>
         <h3>Install the server</h3>
-        <p>Download the installer on your Windows PC and run it. The server starts right away and again whenever you sign in. While it runs, its icon sits in the notification area next to the clock – its menu shows the PC's address and connected devices and lets you quit the server.</p>
+        <p>Download the installer on your Windows PC and run it. By default the server installs as a Windows service: it starts together with the PC, even before you sign in. If Windows has marked your home network as public, the installer warns you – switch it to private, otherwise the firewall will not let the TV in. While the server runs, its icon sits in the notification area next to the clock – its menu shows the PC's address and connected devices and lets you quit the server.</p>
       </li>
       <li>
         <h3>Install the TV app</h3>
@@ -242,7 +248,8 @@
     <details>
       <summary>The app says the server is not responding</summary>
       <p>Check that the server is running on the PC (the RemoteKingdom icon next to the clock; if it is missing, start “RemoteKingdom Server” from the Start menu), that the IP address is correct and that the PC and TV are on the same network. The server uses port 3389 by default. If a window about the missing <code>MFPlat.dll</code> file appears when the server starts, the PC is missing Media Foundation – see “Requirements and tips”.</p>
-      <p>The built-in Windows Remote Desktop uses that same port. If you have it turned on, the RemoteKingdom server will not start – it exits silently and the app only says it cannot connect. To fix this, turn Remote Desktop off (Settings → System → Remote Desktop) or start the RemoteKingdom server on a different port – the port number is given as the first argument (e.g. 3390). If the server will not start, look at the file <code>%LOCALAPPDATA%\RemoteKingdom\rk_server.err</code>: you will find the line <code>[Main] Fatal: bind() failed: 10048</code>.</p>
+      <p>The built-in Windows Remote Desktop uses that same port. If you have it turned on, the RemoteKingdom server will not start – it exits silently and the app only says it cannot connect. To fix this, turn Remote Desktop off (Settings → System → Remote Desktop) or start the RemoteKingdom server on a different port – the port number is given as the first argument (e.g. 3390). If the server will not start, look at the file <code>%ProgramData%\RemoteKingdom\server\rk_server.err</code> (server as a service) or <code>%LOCALAPPDATA%\RemoteKingdom\rk_server.err</code> (plain program): you will find the line <code>[Main] Fatal: bind() failed: 10048</code>.</p>
+      <p>If the server is running and the TV still cannot connect, check whether Windows has marked your home network as public. On a public network the firewall blocks connections to the server (a safeguard in a café or hotel, for example). You can change this in Settings → Network &amp; internet → Wi-Fi or Ethernet → network properties → Network profile type → Private network.</p>
     </details>
     <details>
       <summary>How do I find my PC's IP address?</summary>
@@ -253,8 +260,9 @@
       <p>Yes. If Remote Desktop has no saved password, a RemoteKingdom sign-in screen appears after connecting – enter the user name and password of a Windows account on this PC (for a Microsoft account: its email address and password, not the PIN). After 3 wrong attempts the server disconnects.</p>
     </details>
     <details>
-      <summary>Why can't I sign in with a PIN or Windows Hello?</summary>
-      <p>PIN and Windows Hello do not work in a remote session – the sign-in screen shows only password and smart card. Enter the Windows account password (for a Microsoft account: the account password, not the PIN).</p>
+      <summary>Can I sign in with a PIN or Windows Hello?</summary>
+      <p>With the RemoteKingdom server running as a service (the default) you see the real Windows lock screen and enter your PIN just as you would at the PC. The server's own sign-in screen (shown in mstsc when no password is saved) accepts only the Windows account password (for a Microsoft account: the account password, not the PIN).</p>
+      <p>In the built-in Windows Remote Desktop, PIN and Windows Hello do not work – the sign-in screen shows only password and smart card.</p>
       <p>With a Microsoft account that has the “require Windows Hello” option turned on, signing in to Remote Desktop with just the password may also fail. Turning that option off, or signing in with the password once locally on that PC, helps.</p>
     </details>
     <details>
@@ -267,11 +275,16 @@
     </details>
     <details>
       <summary>The app asks whether to trust a new certificate</summary>
-      <p>This happens after reinstalling the server or Windows. If it is your PC and you changed nothing, choose “No” and check that you are connecting to the right address.</p>
+      <p>This happens after reinstalling the server or Windows, and also once after switching the server to a Windows service (the service has its own certificate). If it is your PC and you changed nothing, choose “No” and check that you are connecting to the right address.</p>
     </details>
     <details>
       <summary>How do I disconnect or use the mouse with the remote?</summary>
       <p>Hold Back to disconnect. Hold OK for mouse mode: the arrows move the pointer, OK clicks.</p>
+    </details>
+    <details>
+      <summary>Windows service or plain program?</summary>
+      <p>The installer chooses a Windows service by default. The server then runs from the moment the PC starts, even when nobody is signed in, so you can sign in remotely on the sign-in screen, enter your PIN on the lock screen and confirm UAC prompts. Signing out or switching users disconnects you briefly – the app reconnects.</p>
+      <p>You can also choose a plain program that starts when you sign in. Then the sign-in screen, lock screen and UAC prompts are not visible remotely: the picture freezes and the keyboard does not work until someone at the PC dismisses them. To change how the server starts, run the installer again and pick the other option (since 0.11.1 the previous one is then removed).</p>
     </details>
     <details>
       <summary>Windows warns about an unknown publisher</summary>
