@@ -81,7 +81,7 @@
       <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
         <h3>Secure</h3>
-        <p>Encrypted connection (TLS). The TV connects only after pairing with a PIN shown on the PC.</p>
+        <p>Encrypted connection (TLS). The TV connects only after signing in: with a Windows account of that PC (NLA) or with a PIN shown on the PC.</p>
       </div>
       <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
@@ -127,7 +127,7 @@
           <tr><th>Sound</th><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>Not tested yet</td></tr>
           <tr><th>Mouse and keyboard</th><td><span class="yes">Yes</span>, TV remote too</td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span>, TV remote too</td></tr>
           <tr><th>Gamepad as a DualShock or Xbox controller</th><td><span class="yes">Yes</span>, with rumble and ✕ ○ □ △ button prompts</td><td><span class="no">No</span></td><td><span class="no">No</span></td></tr>
-          <tr><th>Sign-in</th><td>PIN pairing, automatic afterwards</td><td>Windows account (server's sign-in screen)</td><td>Windows account, NLA included</td></tr>
+          <tr><th>Sign-in</th><td>A Windows account of that PC (NLA) or PIN pairing, automatic afterwards</td><td>Windows account (server's sign-in screen)</td><td>Windows account, NLA included</td></tr>
           <tr><th>Windows sign-in and lock screen (PIN), UAC prompts</th><td><span class="yes">Yes</span>, when the server runs as a service (default)</td><td><span class="yes">Yes</span>, when the server runs as a service (default)</td><td>UAC prompts yes; PIN and Windows Hello no</td></tr>
           <tr><th>Steam Big Picture, gamepad screenshots, ping in statistics</th><td><span class="yes">Yes</span></td><td><span class="no">No</span></td><td><span class="no">No</span></td></tr>
           <tr><th>Windows edition</th><td>10 or 11, Home included</td><td>10 or 11, Home included</td><td>Pro, Enterprise or Education with Remote Desktop turned on</td></tr>
@@ -161,7 +161,7 @@
           <li>PC address and port remembered for next time</li>
           <li><b>Start Steam (Big Picture)</b> right after connecting</li>
           <li><b>Show connection statistics</b> – ping, frames per second, Mb/s and gamepad battery level in a corner, plus how the picture is sent (H.264 with the current bitrate and frame rate cap, or bitmaps)</li>
-          <li>Pairing with the PC by PIN on the first connection</li>
+          <li>Signing in with a Windows account of that PC (NLA) - password remembered on the device - or PIN pairing</li>
         </ul>
       </div>
       <div class="card">
@@ -184,7 +184,7 @@
     <ol class="steps">
       <li>
         <h3>Install the server</h3>
-        <p>Download the installer on your Windows PC and run it. By default the server installs as a Windows service: it starts together with the PC, even before you sign in. If Windows has marked your home network as public, the installer warns you – switch it to private, otherwise the firewall will not let the TV in. While the server runs, its icon sits in the notification area next to the clock – its menu shows the PC's address and connected devices and lets you quit the server.</p>
+        <p>Download the installer on your Windows PC and run it. By default the server installs as a Windows service: it starts together with the PC, even before you sign in. If Windows has marked your home network as public, the installer warns you – switch it to private, otherwise the firewall will not let the TV in. While the server runs, its icon sits in the notification area next to the clock – its menu shows the PC's address and connected devices and lets you quit the server. The installer has <b>"Require Windows sign-in (NLA)"</b> checked: the TV then signs in with a Windows account of that PC before the session starts. Clear it if you prefer the PIN.</p>
       </li>
       <li>
         <h3>Install the TV app</h3>

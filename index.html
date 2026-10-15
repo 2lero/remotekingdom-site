@@ -81,7 +81,7 @@
       <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
         <h3>Bezpiecznie</h3>
-        <p>Połączenie szyfrowane (TLS). Telewizor łączy się dopiero po sparowaniu kodem PIN pokazanym na komputerze.</p>
+        <p>Połączenie szyfrowane (TLS). Telewizor łączy się dopiero po zalogowaniu: kontem Windows tego komputera (NLA) albo kodem PIN pokazanym na komputerze.</p>
       </div>
       <div class="card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
@@ -127,7 +127,7 @@
           <tr><th>Dźwięk</th><td><span class="yes">Tak</span></td><td><span class="yes">Tak</span></td><td>Jeszcze niesprawdzony</td></tr>
           <tr><th>Mysz i klawiatura</th><td><span class="yes">Tak</span>, także pilot</td><td><span class="yes">Tak</span></td><td><span class="yes">Tak</span>, także pilot</td></tr>
           <tr><th>Pad jak DualShock lub kontroler Xbox</th><td><span class="yes">Tak</span>, z wibracjami i podpowiedziami ✕ ○ □ △</td><td><span class="no">Nie</span></td><td><span class="no">Nie</span></td></tr>
-          <tr><th>Logowanie</th><td>Parowanie kodem PIN, potem automatycznie</td><td>Konto Windows (ekran logowania serwera)</td><td>Konto Windows, także NLA</td></tr>
+          <tr><th>Logowanie</th><td>Konto Windows tego komputera (NLA) albo parowanie kodem PIN, potem automatycznie</td><td>Konto Windows (ekran logowania serwera)</td><td>Konto Windows, także NLA</td></tr>
           <tr><th>Ekran logowania i blokady Windows (PIN), okna UAC</th><td><span class="yes">Tak</span>, gdy serwer działa jako usługa (domyślnie)</td><td><span class="yes">Tak</span>, gdy serwer działa jako usługa (domyślnie)</td><td>Okna UAC tak; PIN i Windows Hello nie</td></tr>
           <tr><th>Steam Big Picture, zrzuty z pada, ping w statystykach</th><td><span class="yes">Tak</span></td><td><span class="no">Nie</span></td><td><span class="no">Nie</span></td></tr>
           <tr><th>Wymagany Windows</th><td>10 lub 11, także Home</td><td>10 lub 11, także Home</td><td>Pro, Enterprise lub Education z włączonym Pulpitem zdalnym</td></tr>
@@ -161,7 +161,7 @@
           <li>Adres komputera i port zapamiętywane na następny raz</li>
           <li><b>Uruchom Steam (Big Picture)</b> – od razu po połączeniu</li>
           <li><b>Pokaż statystyki połączenia</b> – ping, klatki na sekundę, Mb/s i stan baterii pada w rogu ekranu, a także sposób przesyłania obrazu (H.264 z aktualnym bitrate i limitem klatek albo bitmapy)</li>
-          <li>Parowanie z komputerem kodem PIN przy pierwszym połączeniu</li>
+          <li>Logowanie kontem Windows tego komputera (NLA) — hasło zapamiętane na urządzeniu — albo parowanie kodem PIN</li>
         </ul>
       </div>
       <div class="card">
@@ -184,7 +184,7 @@
     <ol class="steps">
       <li>
         <h3>Zainstaluj serwer</h3>
-        <p>Pobierz instalator na komputer z Windows i uruchom go. Domyślnie serwer instaluje się jako usługa Windows: startuje razem z komputerem, jeszcze przed zalogowaniem. Jeśli Windows oznaczył Twoją sieć domową jako publiczną, instalator o tym ostrzeże – przełącz ją na prywatną, inaczej zapora nie wpuści telewizora. Gdy serwer działa, jego ikona jest w zasobniku obok zegara – jej menu pokazuje adres komputera, połączone urządzenia i pozwala zakończyć serwer.</p>
+        <p>Pobierz instalator na komputer z Windows i uruchom go. Domyślnie serwer instaluje się jako usługa Windows: startuje razem z komputerem, jeszcze przed zalogowaniem. Jeśli Windows oznaczył Twoją sieć domową jako publiczną, instalator o tym ostrzeże – przełącz ją na prywatną, inaczej zapora nie wpuści telewizora. Gdy serwer działa, jego ikona jest w zasobniku obok zegara – jej menu pokazuje adres komputera, połączone urządzenia i pozwala zakończyć serwer. Instalator ma zaznaczoną opcję <b>„Wymagaj logowania Windows (NLA)"</b>: wtedy telewizor loguje się kontem Windows tego komputera przed rozpoczęciem sesji. Odznacz ją, jeśli wolisz kod PIN.</p>
       </li>
       <li>
         <h3>Zainstaluj aplikację na TV</h3>
