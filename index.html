@@ -290,6 +290,11 @@
       <summary>Czy telewizor może dostać własny ekran (wirtualny monitor)?</summary>
       <p>Tak, to opcja eksperymentalna od wersji 0.14 – zaznacz w instalatorze <b>„Wirtualny monitor”</b> (tylko w trybie usługi). Na czas połączenia Windows dostaje dodatkowy ekran dokładnie w rozdzielczości telewizora lub telefonu i ustawia go jako główny, a monitor komputera zostaje w swojej rozdzielczości. Po rozłączeniu ekran znika. To nadal ten sam pulpit: jeden kursor i te same okna, więc nie służy do pracy we dwie osoby naraz.</p>
       <p>Opcja instaluje sterownik <a href="https://github.com/VirtualDrivers/Virtual-Display-Driver">Virtual Display Driver</a> (licencja MIT) i dodaje jego wydawcę, SignPath Foundation, do zaufanych wydawców Windows – bez tego Windows pytałby o zgodę przy instalacji. Odinstalowanie serwera usuwa sterownik i to zaufanie.</p>
+      <p>Gry w trybie <b>wyłącznego pełnego ekranu</b> są na wirtualnym monitorze czarne – tego mechanizm przechwytywania Windows nie widzi. Ustaw w grze okno albo okno bez ramek, albo przed połączeniem przełącz w aplikacji <b>„Wirtualny monitor: wyłączony”</b> (od wersji aplikacji 0.14.2): obraz idzie wtedy z monitora komputera, gdzie takie gry są widoczne.</p>
+    </details>
+    <details>
+      <summary>Czy obraz może być w HDR?</summary>
+      <p>Tak, to tryb eksperymentalny od wersji 0.15 serwera i 0.14 aplikacji: <b>„Obraz: HEVC HDR”</b>. Pojawia się tylko na telewizorach, które pokazują HDR10 i mają sprzętowy dekoder HEVC 10-bit – na innych tej opcji nie ma. Serwer sam włącza HDR na czas połączenia (na wirtualnym monitorze albo na monitorze komputera, jeśli sam tego nie zrobiłeś) i wyłącza go po rozłączeniu. Cały ekran idzie wtedy jako wideo HEVC Main 10 HDR10, więc tekst na pulpicie jest odrobinę mniej ostry niż w trybie bez strat. Gdy coś po drodze nie obsługuje HDR (karta graficzna, monitor), serwer wysyła zwykłe H.264.</p>
     </details>
     <details>
       <summary>Czy komputer może milczeć, gdy dźwięk gra na telewizorze?</summary>

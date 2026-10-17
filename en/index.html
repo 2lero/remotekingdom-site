@@ -290,6 +290,11 @@
       <summary>Can the TV get a screen of its own (virtual monitor)?</summary>
       <p>Yes, as an experimental option since 0.14 - tick <b>"Virtual monitor"</b> in the installer (service mode only). During a connection Windows gets an extra screen at exactly the TV's or phone's resolution and makes it the primary one, while the PC's monitor keeps its own resolution. The screen goes away when you disconnect. It is still the same desktop: one pointer and the same windows, so it is not for two people working at once.</p>
       <p>The option installs the <a href="https://github.com/VirtualDrivers/Virtual-Display-Driver">Virtual Display Driver</a> (MIT licence) and adds its publisher, SignPath Foundation, to Windows' trusted publishers - otherwise Windows would ask for consent during the install. Uninstalling the server removes the driver and that trust.</p>
+      <p>Games in <b>exclusive fullscreen</b> are black on the virtual monitor - Windows' capture cannot see them there. Set the game to windowed or borderless, or switch the app to <b>"Virtual monitor: off"</b> before connecting (app 0.14.2 and later): the picture then comes from the PC's monitor, where such games show.</p>
+    </details>
+    <details>
+      <summary>Can the picture be HDR?</summary>
+      <p>Yes, as an experimental mode since server 0.15 and app 0.14: <b>"Picture: HEVC HDR"</b>. It appears only on TVs that show HDR10 and have a hardware 10-bit HEVC decoder - elsewhere the option does not exist. The server turns HDR on for the connection (on the virtual monitor, or on the PC's monitor if you had not) and back off afterwards. The whole screen then goes as HEVC Main 10 HDR10 video, so desktop text is slightly less sharp than in the lossless mode. When something on the way cannot do HDR (graphics card, monitor), the server sends plain H.264.</p>
     </details>
     <details>
       <summary>Can the PC stay silent while the sound plays on the TV?</summary>
