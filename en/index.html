@@ -287,6 +287,20 @@
       <p>You can also choose a plain program that starts when you sign in. Then the sign-in screen, lock screen and UAC prompts are not visible remotely: the picture freezes and the keyboard does not work until someone at the PC dismisses them. To change how the server starts, run the installer again and pick the other option (since 0.11.1 the previous one is then removed).</p>
     </details>
     <details>
+      <summary>Can the TV get a screen of its own (virtual monitor)?</summary>
+      <p>Yes, as an experimental option since 0.14 - tick <b>"Virtual monitor"</b> in the installer (service mode only). During a connection Windows gets an extra screen at exactly the TV's or phone's resolution and makes it the primary one, while the PC's monitor keeps its own resolution. The screen goes away when you disconnect. It is still the same desktop: one pointer and the same windows, so it is not for two people working at once.</p>
+      <p>The option installs the <a href="https://github.com/VirtualDrivers/Virtual-Display-Driver">Virtual Display Driver</a> (MIT licence) and adds its publisher, SignPath Foundation, to Windows' trusted publishers - otherwise Windows would ask for consent during the install. Uninstalling the server removes the driver and that trust.</p>
+    </details>
+    <details>
+      <summary>Can the PC stay silent while the sound plays on the TV?</summary>
+      <p>Yes, as an experimental option since 0.14 - tick <b>"Virtual sound card"</b> in the installer. During a connection the sound goes to the TV only, and after it the PC goes back to its own device. It needs a virtual sound card: Steam Streaming Speakers (installed by Steam for Remote Play) or the free <a href="https://vb-audio.com/Cable/">VB-CABLE</a>. Without either the sound works as before - on both the PC and the TV. Programs set to one specific device keep playing there.</p>
+    </details>
+    <details>
+      <summary>Can the app wake a sleeping PC?</summary>
+      <p>It tries - an experimental feature since 0.13 of the server and the app (Wake-on-LAN). Connect once while the PC is on: the server tells the app its network cards. When the PC later does not answer, the app sends the wake-up signal and waits for the server. The installer (option "Let the RemoteKingdom app wake this PC") enables waking on the wired network card and turns off Fast Startup.</p>
+      <p>Whether it works depends on the hardware: it needs a wired connection, the same home network, and Wake on LAN enabled in the BIOS to wake from hibernation or shutdown. On some PCs waking over the network does not work even then.</p>
+    </details>
+    <details>
       <summary>Windows warns about an unknown publisher</summary>
       <p>The installer is not code-signed yet. Click “More info” → “Run anyway”. Only download the installer from this page.</p>
     </details>

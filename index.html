@@ -287,6 +287,20 @@
       <p>Możesz też wybrać zwykły program uruchamiany po zalogowaniu. Wtedy ekran logowania, ekran blokady i okna UAC nie są widoczne zdalnie: obraz staje, a klawiatura nie działa, dopóki ktoś przy komputerze ich nie zamknie. Sposób uruchamiania zmienisz, uruchamiając instalator ponownie i wybierając drugą opcję (od wersji 0.11.1 poprzednia jest wtedy usuwana).</p>
     </details>
     <details>
+      <summary>Czy telewizor może dostać własny ekran (wirtualny monitor)?</summary>
+      <p>Tak, to opcja eksperymentalna od wersji 0.14 – zaznacz w instalatorze <b>„Wirtualny monitor”</b> (tylko w trybie usługi). Na czas połączenia Windows dostaje dodatkowy ekran dokładnie w rozdzielczości telewizora lub telefonu i ustawia go jako główny, a monitor komputera zostaje w swojej rozdzielczości. Po rozłączeniu ekran znika. To nadal ten sam pulpit: jeden kursor i te same okna, więc nie służy do pracy we dwie osoby naraz.</p>
+      <p>Opcja instaluje sterownik <a href="https://github.com/VirtualDrivers/Virtual-Display-Driver">Virtual Display Driver</a> (licencja MIT) i dodaje jego wydawcę, SignPath Foundation, do zaufanych wydawców Windows – bez tego Windows pytałby o zgodę przy instalacji. Odinstalowanie serwera usuwa sterownik i to zaufanie.</p>
+    </details>
+    <details>
+      <summary>Czy komputer może milczeć, gdy dźwięk gra na telewizorze?</summary>
+      <p>Tak, to opcja eksperymentalna od wersji 0.14 – zaznacz w instalatorze <b>„Wirtualna karta dźwiękowa”</b>. Na czas połączenia dźwięk idzie tylko do telewizora, a po rozłączeniu komputer wraca do swojego urządzenia. Potrzebna jest wirtualna karta dźwiękowa: Steam Streaming Speakers (instaluje je Steam przy Remote Play) albo darmowy <a href="https://vb-audio.com/Cable/">VB-CABLE</a>. Bez żadnej z nich dźwięk działa jak dotąd – gra i na komputerze, i na telewizorze. Programy, które mają na stałe wybrane konkretne urządzenie, grają dalej tam.</p>
+    </details>
+    <details>
+      <summary>Czy aplikacja może obudzić uśpiony komputer?</summary>
+      <p>Próbuje – to funkcja eksperymentalna od wersji 0.13 serwera i aplikacji (Wake-on-LAN). Wystarczy raz połączyć się z działającym komputerem: serwer przekaże aplikacji adresy kart sieciowych. Gdy później komputer nie odpowiada, aplikacja wyśle sygnał budzenia i poczeka, aż serwer się zgłosi. Instalator (opcja „Pozwól aplikacji RemoteKingdom budzić ten komputer”) włącza budzenie na karcie przewodowej i wyłącza „Szybki rozruch”.</p>
+      <p>Czy to zadziała, zależy od sprzętu: potrzebne jest połączenie kablem, ta sama sieć domowa, a do budzenia z hibernacji lub wyłączenia także włączone Wake on LAN w BIOS-ie. Na części komputerów budzenie przez sieć mimo to nie działa.</p>
+    </details>
+    <details>
       <summary>Windows ostrzega, że wydawca jest nieznany</summary>
       <p>Instalator nie jest jeszcze podpisany certyfikatem. Kliknij „Więcej informacji” → „Uruchom mimo to”. Pobieraj instalator tylko z tej strony.</p>
     </details>
