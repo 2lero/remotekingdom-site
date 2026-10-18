@@ -306,6 +306,11 @@
       <p>If sleep or hibernation is turned off in Windows, the app says so. PCs with Modern Standby (many mini PCs and laptops) are supported since server 0.16.1. Hibernation works even when Windows does not show it in the Start menu – that is only a menu setting.</p>
     </details>
     <details>
+      <summary>Can the picture travel over UDP?</summary>
+      <p>Yes, since server 0.17 and app 0.16. The picture then uses RDP's standard UDP transport (the one Windows uses for Remote Desktop), which is smoother on Wi‑Fi and over a VPN because a lost packet no longer stalls the whole stream. Sound, input and gamepads stay on TCP. It works with mstsc too. The installer adds a firewall rule for UDP; when UDP cannot get through (firewall, network), the session stays on TCP as before.</p>
+      <p>Server 0.17 needs app 0.16 or later – an older app takes it for Windows and shows the picture in the simplified bitmap mode.</p>
+    </details>
+    <details>
       <summary>Can the app wake a sleeping PC?</summary>
       <p>It tries - an experimental feature since 0.13 of the server and the app (Wake-on-LAN). Connect once while the PC is on: the server tells the app its network cards. When the PC later does not answer, the app sends the wake-up signal and waits for the server. The installer (option "Let the RemoteKingdom app wake this PC") enables waking on the wired network card and turns off Fast Startup.</p>
       <p>Whether it works depends on the hardware: it needs a wired connection, the same home network, and Wake on LAN enabled in the BIOS to wake from hibernation or shutdown. On some PCs waking over the network does not work even then.</p>

@@ -306,6 +306,11 @@
       <p>Jeśli uśpienie albo hibernacja są w Windows wyłączone, aplikacja o tym powie. Komputery z nowoczesnym uśpieniem (wiele mini-PC i laptopów) obsługuje serwer od wersji 0.16.1. Hibernacja działa, nawet jeśli Windows nie pokazuje jej w menu Start – to tylko ustawienie wyglądu menu.</p>
     </details>
     <details>
+      <summary>Czy obraz może iść po UDP?</summary>
+      <p>Tak, od wersji 0.17 serwera i 0.16 aplikacji. Obraz idzie wtedy standardowym transportem UDP z RDP (tym samym, którego używa Windows z Pulpitem zdalnym), co jest płynniejsze na Wi‑Fi i przez VPN, bo zgubiony pakiet nie zatrzymuje całego strumienia. Dźwięk, sterowanie i pad zostają na TCP. Działa też z mstsc. Instalator dodaje regułę zapory dla UDP; gdy UDP nie przejdzie (zapora, sieć), sesja zostaje na TCP jak dotąd.</p>
+      <p>Serwer 0.17 wymaga aplikacji co najmniej 0.16 – starsza wersja uzna go za Windows i pokaże obraz w uproszczonym trybie bitmap.</p>
+    </details>
+    <details>
       <summary>Czy aplikacja może obudzić uśpiony komputer?</summary>
       <p>Próbuje – to funkcja eksperymentalna od wersji 0.13 serwera i aplikacji (Wake-on-LAN). Wystarczy raz połączyć się z działającym komputerem: serwer przekaże aplikacji adresy kart sieciowych. Gdy później komputer nie odpowiada, aplikacja wyśle sygnał budzenia i poczeka, aż serwer się zgłosi. Instalator (opcja „Pozwól aplikacji RemoteKingdom budzić ten komputer”) włącza budzenie na karcie przewodowej i wyłącza „Szybki rozruch”.</p>
       <p>Czy to zadziała, zależy od sprzętu: potrzebne jest połączenie kablem, ta sama sieć domowa, a do budzenia z hibernacji lub wyłączenia także włączone Wake on LAN w BIOS-ie. Na części komputerów budzenie przez sieć mimo to nie działa.</p>
