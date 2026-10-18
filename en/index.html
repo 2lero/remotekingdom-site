@@ -288,7 +288,7 @@
     </details>
     <details>
       <summary>Can the TV get a screen of its own (virtual monitor)?</summary>
-      <p>Yes, as an experimental option since 0.14 - tick <b>"Virtual monitor"</b> in the installer (service mode only). During a connection Windows gets an extra screen at exactly the TV's or phone's resolution and makes it the primary one. Since server 0.16.3 the PC's monitor goes dark meanwhile, so every window is on the screen you see in the app. When you disconnect, the virtual screen goes away and the PC's monitor comes back with its windows. It is still the same desktop: one pointer and the same windows, so it is not for two people working at once.</p>
+      <p>Yes, as an experimental option since 0.14 - tick <b>"Virtual monitor"</b> in the installer (service mode only). During a connection Windows gets an extra screen at exactly the TV's or phone's resolution and makes it the primary one. Since server 0.16.3 the PC's monitor goes dark meanwhile, so every window is on the screen you see in the app. When you disconnect, the virtual screen goes away and the PC's monitor comes back with its windows. Since 0.17.6 a key press, a click or a clear mouse movement at the PC also switches its monitor back on during the session – the remote connection goes on. It is still the same desktop: one pointer and the same windows, so it is not for two people working at once.</p>
       <p>The option installs the <a href="https://github.com/VirtualDrivers/Virtual-Display-Driver">Virtual Display Driver</a> (MIT licence) and adds its publisher, SignPath Foundation, to Windows' trusted publishers - otherwise Windows would ask for consent during the install. Uninstalling the server removes the driver and that trust.</p>
       <p>Games in <b>exclusive fullscreen</b> are black on the virtual monitor - Windows' capture cannot see them there. Set the game to windowed or borderless, or switch the app to <b>"Virtual monitor: off"</b> before connecting (app 0.14.2 and later): the picture then comes from the PC's monitor, where such games show.</p>
     </details>
@@ -307,7 +307,7 @@
     </details>
     <details>
       <summary>Can the picture travel over UDP?</summary>
-      <p>Yes, since server 0.17 and app 0.16. The picture then uses RDP's standard UDP transport (the one Windows uses for Remote Desktop), which is smoother on Wi‑Fi and over a VPN because a lost packet no longer stalls the whole stream. Sound, input and gamepads stay on TCP. It works with mstsc too. The installer adds a firewall rule for UDP; when UDP cannot get through (firewall, network), the session stays on TCP as before.</p>
+      <p>Yes, since server 0.17 and app 0.16. The picture then uses RDP's standard UDP transport (the one Windows uses for Remote Desktop), which is smoother on Wi‑Fi and over a VPN because a lost packet no longer stalls the whole stream. Sound, input and gamepads stay on TCP. It works with mstsc too. The installer adds a firewall rule for UDP; when UDP cannot get through (firewall, network), the session stays on TCP as before. When UDP stops working during a session, the picture in the app returns to TCP without disconnecting (server 0.17.5 and app 0.16.1; mstsc reconnects instead). The app's statistics show whether the picture comes over UDP or TCP.</p>
       <p>Server 0.17 needs app 0.16 or later – an older app takes it for Windows and shows the picture in the simplified bitmap mode.</p>
     </details>
     <details>
