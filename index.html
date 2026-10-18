@@ -301,6 +301,11 @@
       <p>Tak, to opcja eksperymentalna od wersji 0.14 – zaznacz w instalatorze <b>„Wirtualna karta dźwiękowa”</b>. Na czas połączenia dźwięk idzie tylko do telewizora, a po rozłączeniu komputer wraca do swojego urządzenia. Potrzebna jest wirtualna karta dźwiękowa: Steam Streaming Speakers (instaluje je Steam przy Remote Play) albo darmowy <a href="https://vb-audio.com/Cable/">VB-CABLE</a>. Bez żadnej z nich dźwięk działa jak dotąd – gra i na komputerze, i na telewizorze. Programy, które mają na stałe wybrane konkretne urządzenie, grają dalej tam.</p>
     </details>
     <details>
+      <summary>Czy z aplikacji można uśpić albo wyłączyć komputer?</summary>
+      <p>Tak, od wersji 0.15 aplikacji i 0.16 serwera. W sesji u góry ekranu jest menu z przyciskiem <b>„Zasilanie”</b>: uśpij, hibernuj albo wyłącz. Na telewizorze menu pojawia się w trybie myszy (przytrzymaj OK), na telefonie po dotknięciu górnej krawędzi ekranu. Gdy aplikacja na telefonie działa w tle, w powiadomieniu jest przycisk wyłączania komputera (dotknij dwa razy) i osobny przycisk „Rozłącz”.</p>
+      <p>Jeśli uśpienie albo hibernacja są w Windows wyłączone, aplikacja o tym powie. Komputery z nowoczesnym uśpieniem (wiele mini-PC i laptopów) obsługuje serwer od wersji 0.16.1. Hibernacja działa, nawet jeśli Windows nie pokazuje jej w menu Start – to tylko ustawienie wyglądu menu.</p>
+    </details>
+    <details>
       <summary>Czy aplikacja może obudzić uśpiony komputer?</summary>
       <p>Próbuje – to funkcja eksperymentalna od wersji 0.13 serwera i aplikacji (Wake-on-LAN). Wystarczy raz połączyć się z działającym komputerem: serwer przekaże aplikacji adresy kart sieciowych. Gdy później komputer nie odpowiada, aplikacja wyśle sygnał budzenia i poczeka, aż serwer się zgłosi. Instalator (opcja „Pozwól aplikacji RemoteKingdom budzić ten komputer”) włącza budzenie na karcie przewodowej i wyłącza „Szybki rozruch”.</p>
       <p>Czy to zadziała, zależy od sprzętu: potrzebne jest połączenie kablem, ta sama sieć domowa, a do budzenia z hibernacji lub wyłączenia także włączone Wake on LAN w BIOS-ie. Na części komputerów budzenie przez sieć mimo to nie działa.</p>

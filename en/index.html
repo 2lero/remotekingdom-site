@@ -301,6 +301,11 @@
       <p>Yes, as an experimental option since 0.14 - tick <b>"Virtual sound card"</b> in the installer. During a connection the sound goes to the TV only, and after it the PC goes back to its own device. It needs a virtual sound card: Steam Streaming Speakers (installed by Steam for Remote Play) or the free <a href="https://vb-audio.com/Cable/">VB-CABLE</a>. Without either the sound works as before - on both the PC and the TV. Programs set to one specific device keep playing there.</p>
     </details>
     <details>
+      <summary>Can the app put the PC to sleep or shut it down?</summary>
+      <p>Yes, since app 0.15 and server 0.16. During a session there is a menu at the top of the screen with a <b>"Power"</b> button: sleep, hibernate or shut down. On a TV the menu shows in mouse mode (hold OK), on a phone after touching the top edge of the screen. While the phone app runs in the background, its notification has a button that shuts the PC down (tap twice) and a separate "Disconnect" button.</p>
+      <p>If sleep or hibernation is turned off in Windows, the app says so. PCs with Modern Standby (many mini PCs and laptops) are supported since server 0.16.1. Hibernation works even when Windows does not show it in the Start menu – that is only a menu setting.</p>
+    </details>
+    <details>
       <summary>Can the app wake a sleeping PC?</summary>
       <p>It tries - an experimental feature since 0.13 of the server and the app (Wake-on-LAN). Connect once while the PC is on: the server tells the app its network cards. When the PC later does not answer, the app sends the wake-up signal and waits for the server. The installer (option "Let the RemoteKingdom app wake this PC") enables waking on the wired network card and turns off Fast Startup.</p>
       <p>Whether it works depends on the hardware: it needs a wired connection, the same home network, and Wake on LAN enabled in the BIOS to wake from hibernation or shutdown. On some PCs waking over the network does not work even then.</p>
