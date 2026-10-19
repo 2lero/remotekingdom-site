@@ -307,7 +307,7 @@
     </details>
     <details>
       <summary>Can the picture travel over UDP?</summary>
-      <p>Yes, since server 0.17 and app 0.16. The picture then uses RDP's standard UDP transport (the one Windows uses for Remote Desktop), which is smoother on Wi‑Fi and over a VPN because a lost packet no longer stalls the whole stream. Sound, input and gamepads stay on TCP. It works with mstsc too. The installer adds a firewall rule for UDP; when UDP cannot get through (firewall, network), the session stays on TCP as before. When UDP stops working during a session, the picture in the app returns to TCP without disconnecting (server 0.17.5 and app 0.16.1; mstsc reconnects instead). The app's statistics show whether the picture comes over UDP or TCP.</p>
+      <p>Yes, since server 0.17 and app 0.16. The picture then uses RDP's standard UDP transport (the one Windows uses for Remote Desktop), which is smoother on Wi‑Fi and over a VPN because a lost packet no longer stalls the whole stream. Sound, input and gamepads stay on TCP. It works with mstsc too. The installer adds a firewall rule for UDP; when UDP cannot get through (firewall, network), the session stays on TCP as before. When UDP stops working during a session, the picture in the app returns to TCP without disconnecting (server 0.17.5 and app 0.16.1; mstsc reconnects instead, and since 0.17.10 it first waits up to 10 seconds, so a short Wi-Fi drop does not disconnect it). The app's statistics show whether the picture comes over UDP or TCP.</p>
       <p>Server 0.17 needs app 0.16 or later – an older app takes it for Windows and shows the picture in the simplified bitmap mode.</p>
     </details>
     <details>

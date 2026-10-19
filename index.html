@@ -307,7 +307,7 @@
     </details>
     <details>
       <summary>Czy obraz może iść po UDP?</summary>
-      <p>Tak, od wersji 0.17 serwera i 0.16 aplikacji. Obraz idzie wtedy standardowym transportem UDP z RDP (tym samym, którego używa Windows z Pulpitem zdalnym), co jest płynniejsze na Wi‑Fi i przez VPN, bo zgubiony pakiet nie zatrzymuje całego strumienia. Dźwięk, sterowanie i pad zostają na TCP. Działa też z mstsc. Instalator dodaje regułę zapory dla UDP; gdy UDP nie przejdzie (zapora, sieć), sesja zostaje na TCP jak dotąd. Gdy UDP przestanie działać w trakcie sesji, obraz w aplikacji wraca na TCP bez rozłączania (serwer 0.17.5 i aplikacja 0.16.1; mstsc łączy się wtedy ponownie). W statystykach aplikacji widać, czy obraz idzie po UDP, czy po TCP.</p>
+      <p>Tak, od wersji 0.17 serwera i 0.16 aplikacji. Obraz idzie wtedy standardowym transportem UDP z RDP (tym samym, którego używa Windows z Pulpitem zdalnym), co jest płynniejsze na Wi‑Fi i przez VPN, bo zgubiony pakiet nie zatrzymuje całego strumienia. Dźwięk, sterowanie i pad zostają na TCP. Działa też z mstsc. Instalator dodaje regułę zapory dla UDP; gdy UDP nie przejdzie (zapora, sieć), sesja zostaje na TCP jak dotąd. Gdy UDP przestanie działać w trakcie sesji, obraz w aplikacji wraca na TCP bez rozłączania (serwer 0.17.5 i aplikacja 0.16.1; mstsc łączy się wtedy ponownie, a od wersji 0.17.10 najpierw czeka do 10 sekund, więc krótka przerwa w Wi-Fi go nie rozłącza). W statystykach aplikacji widać, czy obraz idzie po UDP, czy po TCP.</p>
       <p>Serwer 0.17 wymaga aplikacji co najmniej 0.16 – starsza wersja uzna go za Windows i pokaże obraz w uproszczonym trybie bitmap.</p>
     </details>
     <details>
