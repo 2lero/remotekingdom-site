@@ -1,0 +1,77 @@
+﻿RemoteKingdom – licencja użytkownika
+(English version below)
+
+Obowiązuje od 22 października 2026 r. Dotyczy serwera RemoteKingdom dla Windows
+i aplikacji RemoteKingdom dla Androida (dalej: „Program”).
+
+1. Program jest darmowy. Możesz go instalować i używać bez opłat, prywatnie
+   i w firmie, na dowolnej liczbie swoich urządzeń.
+
+2. Program pozostaje własnością autora. Nie wolno go sprzedawać, wynajmować
+   ani udostępniać za opłatą, a także rozpowszechniać w zmienionej postaci.
+   Nie wolno go dekompilować, deasemblować ani w inny sposób odtwarzać jego
+   kodu źródłowego, poza zakresem, na który wprost pozwala prawo.
+   Niezmieniony instalator można przekazywać dalej za darmo.
+
+3. Składniki innych autorów (np. sterownik wirtualnego monitora) są objęte
+   własnymi licencjami, wymienionymi w pliku THIRD-PARTY-NOTICES.txt.
+
+4. Program jest udostępniany w obecnej postaci („tak jak jest”), bez
+   jakichkolwiek gwarancji, w tym gwarancji przydatności do określonego celu
+   i działania bez błędów. Program zmienia ustawienia systemu (np. ekran,
+   dźwięk, zaporę) i daje zdalny dostęp do komputera – używasz go na własne
+   ryzyko i odpowiadasz za zabezpieczenie dostępu (hasło, PIN, sieć).
+
+5. W zakresie dopuszczalnym przez prawo autor nie odpowiada za szkody wynikłe
+   z używania Programu albo z niemożności jego użycia, w tym za utratę danych,
+   przerwy w pracy, uszkodzenie sprzętu lub oprogramowania i nieuprawniony
+   dostęp do komputera. Nie wyłącza to odpowiedzialności, której prawo nie
+   pozwala wyłączyć (np. za szkodę wyrządzoną umyślnie).
+
+6. Program nie wysyła żadnych danych do autora ani podmiotów trzecich.
+   Szczegóły: polityka prywatności na stronie
+   https://2lero.github.io/remotekingdom-site/
+
+7. Licencja wygasa, jeśli naruszysz jej warunki; wtedy należy usunąć Program.
+   Autor może zmieniać licencję dla przyszłych wersji.
+
+Kontakt: przez stronę https://2lero.github.io/remotekingdom-site/
+
+------------------------------------------------------------------------------
+
+RemoteKingdom – end-user licence
+
+Effective 22 October 2026. Covers the RemoteKingdom server for Windows and the
+RemoteKingdom app for Android (the "Software").
+
+1. The Software is free. You may install and use it at no cost, privately and
+   at work, on any number of your own devices.
+
+2. The Software remains the author's property. You may not sell, rent or
+   otherwise provide it for a fee, or distribute modified copies. You may not
+   decompile, disassemble or otherwise reconstruct its source code, except as
+   far as the law expressly allows. The unmodified installer may be passed on
+   free of charge.
+
+3. Components by other authors (e.g. the virtual display driver) are covered
+   by their own licences, listed in THIRD-PARTY-NOTICES.txt.
+
+4. The Software is provided "as is", without any warranty, including any
+   warranty of fitness for a particular purpose or error-free operation. The
+   Software changes system settings (e.g. display, audio, firewall) and gives
+   remote access to the computer - you use it at your own risk and are
+   responsible for securing access to it (password, PIN, network).
+
+5. To the extent permitted by law, the author is not liable for any damage
+   arising from the use of, or inability to use, the Software, including loss
+   of data, interruptions, damage to hardware or software, and unauthorised
+   access to the computer. This does not exclude liability that cannot be
+   excluded by law (e.g. for intentional damage).
+
+6. The Software sends no data to the author or to third parties. Details: the
+   privacy policy at https://2lero.github.io/remotekingdom-site/en/
+
+7. The licence ends if you breach its terms; the Software must then be
+   removed. The author may change the licence for future versions.
+
+Contact: through https://2lero.github.io/remotekingdom-site/en/
