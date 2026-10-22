@@ -297,6 +297,10 @@
       <p>Tak, to tryb eksperymentalny od wersji 0.15 serwera i 0.14 aplikacji: <b>„Obraz: HEVC HDR”</b>. Pojawia się tylko na telewizorach, które pokazują HDR10 i mają sprzętowy dekoder HEVC 10-bit – na innych tej opcji nie ma. Serwer sam włącza HDR na czas połączenia (na wirtualnym monitorze albo na monitorze komputera, jeśli sam tego nie zrobiłeś) i wyłącza go po rozłączeniu. Cały ekran idzie wtedy jako wideo HEVC Main 10 HDR10, więc tekst na pulpicie jest odrobinę mniej ostry niż w trybie bez strat. Gdy coś po drodze nie obsługuje HDR (karta graficzna, monitor), serwer wysyła zwykłe H.264.</p>
     </details>
     <details>
+      <summary>Czy obraz może mieć 120 klatek na sekundę?</summary>
+      <p>Tak, od wersji 0.17.23 serwera i 0.17.0 aplikacji. Gdy ekran telefonu albo telewizora umie 120 Hz w swojej rozdzielczości, aplikacja sama go przełącza i prosi serwer o 120 klatek (wirtualny monitor też dostaje wtedy 120 Hz). Inaczej obraz idzie w 60 klatkach; mstsc zostaje przy 60. Od wersji 0.17.24 serwer naprawdę dobija do 120, o ile gra rysuje tyle klatek, a Wi-Fi nadąża – przy gorszej sieci automatyka sama zmniejsza liczbę klatek.</p>
+    </details>
+    <details>
       <summary>Czy komputer może milczeć, gdy dźwięk gra na telewizorze?</summary>
       <p>Tak, to opcja eksperymentalna od wersji 0.14 – zaznacz w instalatorze <b>„Wirtualna karta dźwiękowa”</b>. Na czas połączenia dźwięk idzie tylko do telewizora, a po rozłączeniu komputer wraca do swojego urządzenia. Potrzebna jest wirtualna karta dźwiękowa: Steam Streaming Speakers (instaluje je Steam przy Remote Play) albo darmowy <a href="https://vb-audio.com/Cable/">VB-CABLE</a>. Bez żadnej z nich dźwięk działa jak dotąd – gra i na komputerze, i na telewizorze. Programy, które mają na stałe wybrane konkretne urządzenie, grają dalej tam.</p>
     </details>
