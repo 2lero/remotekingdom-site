@@ -283,7 +283,7 @@
     </details>
     <details>
       <summary>Usługa Windows czy zwykły program?</summary>
-      <p>Instalator domyślnie wybiera usługę Windows. Serwer działa wtedy od startu komputera, także gdy nikt nie jest zalogowany, więc zdalnie zalogujesz się na ekranie logowania, wpiszesz PIN na ekranie blokady i potwierdzisz okna UAC. Wylogowanie albo przełączenie użytkownika na chwilę rozłącza – aplikacja połączy się ponownie.</p>
+      <p>Instalator domyślnie wybiera usługę Windows. Serwer działa wtedy od startu komputera, także gdy nikt nie jest zalogowany, więc zdalnie zalogujesz się na ekranie logowania, wpiszesz PIN na ekranie blokady i potwierdzisz okna UAC. Wylogowanie albo przełączenie użytkownika na chwilę rozłącza – aplikacja połączy się ponownie, a od wersji serwera 0.17.25 także mstsc (bez błędu 0x904).</p>
       <p>Możesz też wybrać zwykły program uruchamiany po zalogowaniu. Wtedy ekran logowania, ekran blokady i okna UAC nie są widoczne zdalnie: obraz staje, a klawiatura nie działa, dopóki ktoś przy komputerze ich nie zamknie. Sposób uruchamiania zmienisz, uruchamiając instalator ponownie i wybierając drugą opcję (od wersji 0.11.1 poprzednia jest wtedy usuwana).</p>
     </details>
     <details>
@@ -311,7 +311,7 @@
     </details>
     <details>
       <summary>Czy obraz może iść po UDP?</summary>
-      <p>Tak, od wersji 0.17 serwera i 0.16 aplikacji. Obraz idzie wtedy standardowym transportem UDP z RDP (tym samym, którego używa Windows z Pulpitem zdalnym), co jest płynniejsze na Wi‑Fi i przez VPN, bo zgubiony pakiet nie zatrzymuje całego strumienia. Dźwięk, sterowanie i pad zostają na TCP. Działa też z mstsc. Instalator dodaje regułę zapory dla UDP; gdy UDP nie przejdzie (zapora, sieć), sesja zostaje na TCP jak dotąd. Gdy UDP przestanie działać w trakcie sesji, obraz w aplikacji wraca na TCP bez rozłączania (serwer 0.17.5 i aplikacja 0.16.1; mstsc łączy się wtedy ponownie, a od wersji 0.17.11 najpierw czeka do 10 sekund, więc krótka przerwa w Wi-Fi go nie rozłącza). W statystykach aplikacji widać, czy obraz idzie po UDP, czy po TCP.</p>
+      <p>Tak, od wersji 0.17 serwera i 0.16 aplikacji. Obraz idzie wtedy standardowym transportem UDP z RDP (tym samym, którego używa Windows z Pulpitem zdalnym), co jest płynniejsze na Wi‑Fi i przez VPN, bo zgubiony pakiet nie zatrzymuje całego strumienia. Dźwięk, sterowanie i pad zostają na TCP. Działa też z mstsc. Instalator dodaje regułę zapory dla UDP; gdy UDP nie przejdzie (zapora, sieć), sesja zostaje na TCP jak dotąd. Gdy UDP przestanie działać w trakcie sesji, obraz w aplikacji wraca na TCP bez rozłączania (serwer 0.17.5 i aplikacja 0.16.1; mstsc łączy się wtedy ponownie, a od wersji 0.17.11 najpierw czeka do 10 sekund, więc krótka przerwa w Wi-Fi go nie rozłącza). W statystykach aplikacji widać, czy obraz idzie po UDP, czy po TCP. Od wersji serwera 0.17.25 i aplikacji 0.17.2, gdy sieć gubi pakiety, serwer dosyła po UDP pakiety naprawcze (FEC): pojedynczy zgubiony pakiet aplikacja odtwarza od razu, bez czekania na ponowne wysłanie. Na sieci bez strat nic się nie zmienia.</p>
       <p>Serwer 0.17 wymaga aplikacji co najmniej 0.16 – starsza wersja uzna go za Windows i pokaże obraz w uproszczonym trybie bitmap.</p>
     </details>
     <details>
